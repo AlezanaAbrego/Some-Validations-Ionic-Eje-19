@@ -7,8 +7,40 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+
+  <div > 
+    <ion-avatar class="avatar">
+      <img style="max-width: 50%;" src="http://www.precision-spine.com/wp-content/uploads/2015/09/person-icon.png">
+    </ion-avatar>
+  </div>
+  <form [formGroup]="validations_form">
+  <ion-item>
+    <ion-label floating>Nombre</ion-label>
+    <ion-input type="text" formControlName="name"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+  <ion-item>
+    <ion-label floating>Usuario</ion-label>
+    <ion-input type="text" formControlName="user"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" formControlName="pass"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+      <ion-label >Algo</ion-label>
+      <ion-toggle  formControlName="algo"></ion-toggle>
+    </ion-item>
+  
+  <div>
+    <button ion-button block primary [disabled]="!validations_form.valid" (click)="go()">ENTRAR</button>
+  </div>
+
+  <pre>{{ validations_form.value | json }}</pre>
+</form>
 </ion-content>

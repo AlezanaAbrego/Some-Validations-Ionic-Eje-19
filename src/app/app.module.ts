@@ -6,20 +6,25 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { OtraPaginaPage } from '../pages/otra-pagina/otra-pagina'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    OtraPaginaPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    OtraPaginaPage
   ],
   providers: [
     StatusBar,
